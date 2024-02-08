@@ -111,5 +111,37 @@ def main():
             # else:
             #     stop_rds(rds_client, rds_name)
 
+
+
+# def start_stop_clusters(rds_client, clusters, action):
+#     current_time = get_current_time()
+
+#     for cluster in clusters:
+#         cluster_name = cluster['name']
+#         start_time = cluster['start_time']
+#         stop_time = cluster['stop_time']
+
+#         if is_within_time_range(start_time, stop_time, current_time):
+#             cluster_status = check_cluster_status(rds_client, cluster_name)
+            
+#             if cluster_status:
+#                 print(f"Cluster {cluster_name} is currently {cluster_status}")
+                
+#                 if cluster_status == "available" and action == "stop":
+#                     print(f"Stopping {cluster_name}")
+#                     rds_client.stop_db_cluster(DBClusterIdentifier=cluster_name)
+                    
+#                 elif cluster_status == "stopped" and action == "start":
+#                     print(f"Starting {cluster_name}")
+#                     rds_client.start_db_cluster(DBClusterIdentifier=cluster_name)
+                    
+#                 else:
+#                     print(f"Cluster {cluster_name} is not in a suitable state for the action.")
+                    
+#             else:
+#                 print(f"Unable to retrieve status for cluster {cluster_name}")
+
+
+
 if __name__ == '__main__':
     main()
