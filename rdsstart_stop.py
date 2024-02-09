@@ -54,7 +54,7 @@ def main():
         start_time = datetime.strptime(cluster['start_time'], '%H:%M').time()
         stop_time = datetime.strptime(cluster['stop_time'], '%H:%M').time()
         current_time = datetime.now().time()
-        rds_client = boto3.client('rds', region_name=region,aws_access_key_id="AKIAWVSRUQCJOK2TZ4MC",aws_secret_access_key="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")
+        rds_client = boto3.client('rds', region_name=region,aws_access_key_id="",aws_secret_access_key="")
         if current_time >= start_time:
             cluster_status = check_cluster_status(rds_client, rds_name)
             if cluster_status == 'stopped':
